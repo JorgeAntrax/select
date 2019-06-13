@@ -1,0 +1,134 @@
+listbox {
+    min-width: 3.125rem;
+    position: relative;
+}
+
+listbox,
+listbox list,
+listbox list-item {
+    display: flex;
+    flex-direction: column
+}
+
+listbox .input:focus~.listbox-icon {
+    opacity: 1
+}
+
+listbox .listbox-icon,
+listbox .is-toggle-listbox {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer
+}
+
+listbox .listbox-icon {
+    left: 0.3rem;
+    opacity: 0.6;
+    transition: all .2s ease
+}
+
+listbox list {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    max-height: 0;
+    background-color: #fff;
+    z-index: 10;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: max-height .2s ease;
+}
+
+listbox list.is-visible {
+    max-height: 200px;
+}
+
+listbox list.is-visible .list-container {
+    height: 100%;
+    overflow-y: auto;
+}
+
+listbox list-item {
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+listbox list-item:not(.is-active):hover {
+    background-color: rgb(192, 192, 192)
+}
+
+listbox list-item.is-active {
+    color: rgb(34, 34, 34);
+    background-color: whitesmoke
+}
+
+.toggleListbox {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    overflow: hidden;
+    display: inline-flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 38px;
+}
+
+.toggleListbox span {
+    display: block;
+    min-width: 10px;
+    min-height: 10px;
+    border: 1px solid #000;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    user-select: none;
+    transform: rotate(45deg);
+    margin-top: -6px;
+}
+
+listbox.is-dark {
+    color: inherit
+}
+
+listbox.is-dark .input:focus {
+    border-color: #353535
+}
+
+listbox.is-dark .is-toggle-listbox {
+    color: #353535
+}
+
+listbox.is-dark list-item.is-active {
+    background-color: #353535
+}
+
+listbox.is-black {
+    color: inherit
+}
+
+listbox.is-black .input:focus {
+    border-color: #000
+}
+
+listbox.is-black .is-toggle-listbox {
+    color: #000
+}
+
+listbox.is-black list-item.is-active {
+    background-color: #000
+}
+
+listbox .oh-input {
+    padding-right: 40px !important;
+}
